@@ -1,0 +1,132 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    06/13/2022  11:31:00  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+F:\EMBEDDED C 8051\C51\BIN\BL51.EXE .\Objects\Dc_motor.obj TO .\Objects\DC_motor_project PRINT (.\Listings\DC_motor_proj
+>> ect.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\Dc_motor.obj (DC_MOTOR)
+  F:\EMBEDDED C 8051\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\DC_motor_project (DC_MOTOR)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         _DATA_GROUP_
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0039H     UNIT         ?PR?MAIN?DC_MOTOR
+            CODE    0839H     001AH     UNIT         ?PR?_DELAY?DC_MOTOR
+            CODE    0853H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\DC_motor_project (DC_MOTOR)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?DC_MOTOR
+
+?PR?MAIN?DC_MOTOR              -----    -----
+  +--> ?PR?_DELAY?DC_MOTOR
+
+?PR?_DELAY?DC_MOTOR            0008H    0002H
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\DC_motor_project (DC_MOTOR)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DC_MOTOR
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:0845H         PUBLIC        _delay
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  06/13/2022  11:31:00  PAGE 2
+
+
+  C:0800H         PUBLIC        main
+  B:00A0H.2       PUBLIC        enb1
+  B:00A0H.3       PUBLIC        enb2
+  B:00A0H.0       PUBLIC        inp1
+  B:00A0H.1       PUBLIC        inp2
+  B:00A0H.4       PUBLIC        inp3
+  B:00A0H.5       PUBLIC        inp4
+  -------         PROC          L?0008
+  -------         ENDPROC       L?0008
+  -------         PROC          _DELAY
+  D:0008H         SYMBOL        count
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0845H         LINE#         2
+  C:0849H         LINE#         3
+  C:0849H         LINE#         5
+  C:0849H         LINE#         6
+  C:0849H         LINE#         7
+  C:084CH         LINE#         8
+  C:084CH         LINE#         9
+  C:0851H         LINE#         10
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  C:0800H         LINE#         21
+  C:0800H         LINE#         22
+  C:0800H         LINE#         23
+  C:0802H         LINE#         24
+  C:0804H         LINE#         25
+  C:0806H         LINE#         26
+  C:0808H         LINE#         27
+  C:080AH         LINE#         28
+  C:080CH         LINE#         29
+  C:080CH         LINE#         30
+  C:080CH         LINE#         31
+  C:080EH         LINE#         32
+  C:0810H         LINE#         33
+  C:0812H         LINE#         34
+  C:0814H         LINE#         35
+  C:081BH         LINE#         37
+  C:081BH         LINE#         38
+  C:081BH         LINE#         39
+  C:081BH         LINE#         40
+  C:081BH         LINE#         41
+  C:081EH         LINE#         43
+  C:0820H         LINE#         44
+  C:0822H         LINE#         45
+  C:0824H         LINE#         46
+  C:0826H         LINE#         47
+  C:082DH         LINE#         48
+  C:0834H         LINE#         50
+  C:0834H         LINE#         51
+  C:0834H         LINE#         52
+  C:0834H         LINE#         53
+  C:0834H         LINE#         54
+  C:0837H         LINE#         57
+  -------         ENDPROC       MAIN
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  06/13/2022  11:31:00  PAGE 3
+
+
+  -------         ENDMOD        DC_MOTOR
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0053H BYTE ( 4%) *
+******************************************************************************
+
+Program Size: data=11.0 xdata=0 code=98
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

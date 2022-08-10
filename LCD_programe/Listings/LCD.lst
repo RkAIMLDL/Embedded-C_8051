@@ -1,0 +1,79 @@
+C51 COMPILER V9.60.0.0   LCD                                                               06/14/2022 20:59:31 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE LCD
+OBJECT MODULE PLACED IN .\Objects\LCD.obj
+COMPILER INVOKED BY: F:\Embedded C 8051\KEIL_MICROVISION\C51\BIN\C51.EXE LCD.C OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTE
+                    -ND PRINT(.\Listings\LCD.lst) TABS(2) OBJECT(.\Objects\LCD.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          sbit rs=P1^0;
+   3          sbit en=P1^1;
+   4          void delay(unsigned int count)
+   5          {
+   6   1        unsigned i=115;
+   7   1        while(count)
+   8   1        {
+   9   2          while(i>0)
+  10   2            i--;
+  11   2          count--;
+  12   2        }
+  13   1        
+  14   1      }
+  15          
+  16          void lcd_data(unsigned char abc)
+  17          {
+  18   1        rs=1;
+  19   1        P2=abc;
+  20   1        en=1;
+  21   1        delay(50);
+  22   1        en=0;
+  23   1      }
+  24          void lcd_cmd(unsigned char abc)
+  25          {
+  26   1        rs=0;
+  27   1        P2=abc;
+  28   1        en=1;
+  29   1        delay(50);
+  30   1        en=0;
+  31   1      }
+  32          void main()
+  33          {
+  34   1        lcd_cmd(0x38);
+  35   1        lcd_cmd(0x02);
+  36   1        lcd_cmd(0x01);
+  37   1        lcd_cmd(0x0C);
+  38   1        lcd_cmd(0x06);
+  39   1        lcd_cmd(0x85);
+  40   1        
+  41   1        
+  42   1        lcd_data('w');
+  43   1        lcd_data('e');
+  44   1        lcd_data('l');
+  45   1        lcd_data('c');
+  46   1        lcd_data('o');
+  47   1        lcd_data('m');
+  48   1        lcd_data('e');
+  49   1        while(1)
+  50   1        {
+  51   2          
+  52   2        }
+  53   1      }
+
+C51 COMPILER V9.60.0.0   LCD                                                               06/14/2022 20:59:31 PAGE 2   
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    123    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
